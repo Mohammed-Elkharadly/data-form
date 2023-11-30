@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The project</title>
+    <link rel="stylesheet" href="main.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="main">
+      <nav class="nav">
+        <h1><img src="images/logo.svg" alt="logo" /></h1>
+      </nav>
+      <div class="container">
+        <form action="#" method="get" id="sign-up">
+          <h2>اشتراك</h2>
+          <div class="form-container">
+            <label for="name">: الاسم </label>
+            <input type="text" id="name" name="name"  />
+            <div class="error" id="error-message1"></div>
+          </div>
+          <div class="form-container">
+            <label for="email">: البريد الاليكترونى </label>
+            <input type="email" id="email" name="email"  />
+            <div class="error" id="error-message2"></div>
+          </div>
+          <div class="form-container">
+            <label for="password">: كلمة المرور</label>
+            <input type="password" id="password" name="password"  />
+            <div class="error" id="error-message3"></div>
+          </div>
+          <div class="form-container">
+            <label for="password2">: كلمة المرور مرة اخرى </label>
+            <input type="password" id="password2" name="password2"  />
+            <div class="error" id="error-message4"></div>
+          </div>
+          <button class="btn sign-up" id="btn" type="submit">تسجيل</button>
+        </form>
+        <form action="#" method="post" id="log-in">
+          <h2>تسجيل الدخول</h2>
+          <div class="form-container">
+            <label for="email2">: البريد الاليكترونى </label>
+            <input type="email" id="email2" name="email2" />
+            <div class="error" id="error-message5"></div>
+          </div>
+          <div class="form-container">
+            <label for="password3">: كلمة المرور </label>
+            <input type="password" id="password3" name="password3"/>
+            <div class="error" id="error-message6"></div>
+          </div>
+          <button class="btn log-in" id="btn" type="submit">تسجيل الدخول</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

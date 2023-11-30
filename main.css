@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+  font-size: 10px;
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right,
+    hsl(219, 96%, 51%),
+    hsl(187, 100%, 50%)
+  );
+}
+
+main .nav {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-shadow: inset 1px 1px 20px 0px hsl(210, 48%, 32%);
+}
+
+
+main .container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem 0;
+  gap: 4rem;
+}
+
+@media (max-width: 46em) {
+  main .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+main .container #log-in {
+  align-items: flex-start;
+}
+
+main .container form {
+  background-color: white;
+  border-radius: .5rem;
+  padding: 1.5rem;
+}
+
+
+main .container .form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+main .container form h2 {
+  color: hsl(210, 98%, 16%);
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main .container .form-container label {
+  color: hsl(210, 98%, 16%);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+main .container .form-container input {
+  padding: 0.5rem 0.2rem;
+  font-size: 1.5rem;
+  color: hsl(210, 98%, 16%);
+  width: 30rem;
+  outline: none;
+  border: 1px solid hsl(210, 98%, 16%);
+  border-radius: 0.5rem;
+  text-align: right;
+}
+
+main .container form .btn {
+  background-color: hsl(210, 48%, 32%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(210, 98%, 16%);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.2rem;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+main .container form .btn:hover {
+  background-color: hsl(210, 98%, 16%);
+}
+
+main .container .form-container .error {
+  margin-top: .5rem;
+  font-size: 1.2rem;
+  color: hsl(0, 100%, 50%);
+  width: 30rem;
+}
+
+main .container table thead {
+  background-color: white;
+}
+main .container table thead th {
+  padding: 15px;
+  text-transform: capitalize;
+  border-spacing: 0;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+main .container table tbody {
+  background-color: white;
+}
+main .container table tbody td {
+  padding: 1.5rem;
+  font-size: 1.5rem
+}
+

@@ -13,6 +13,11 @@ html {
   font-size: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+}
+
 main {
   min-height: 100vh;
   background-image: linear-gradient(

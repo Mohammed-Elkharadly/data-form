@@ -60,6 +60,7 @@ main .container form {
   background-color: white;
   border-radius: .5rem;
   padding: 1.5rem;
+  position: relative;
 }
 
 
@@ -117,6 +118,18 @@ main .container .form-container .error {
   width: 30rem;
 }
 
+#error-message7 {
+  font-size: 1.5rem;
+    color: hsl(0, 100%, 50%);
+    position: absolute;
+    top: 2.5rem;
+    text-align: right;
+    right: 1.4rem;
+}
+
+main .container table {
+  overflow-x: scroll;
+}
 main .container table thead {
   background-color: white;
 }
@@ -131,6 +144,7 @@ main .container table thead th {
 
 main .container table tbody {
   background-color: white;
+  text-align: right;
 }
 main .container table tbody td {
   padding: 1.5rem;

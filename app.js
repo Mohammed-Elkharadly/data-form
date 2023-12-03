@@ -18,8 +18,7 @@ let emailRe =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let passwordRe = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
 
-
-const handlerSignUp = function (e) {
+btnSignUp.addEventListener("click", function (e) {
   errorMessage1.innerHTML = "";
   errorMessage2.innerHTML = "";
   errorMessage3.innerHTML = "";
@@ -64,9 +63,9 @@ const handlerSignUp = function (e) {
     inputName.style.border = "none";
     inputName.style.color = "green";
   }
-};
+});
 
-const handlerLogIN = function (e) {
+btnLogIn.addEventListener("click", function (e) {
   e.preventDefault();
   errorMessage5.innerHTML = "";
   errorMessage6.innerHTML = "";
@@ -104,12 +103,9 @@ const handlerLogIN = function (e) {
   passwordThree.value = "";
   btnLogIn.removeEventListener("click", handlerLogIN);
   btnSignUp.removeEventListener("click", handlerSignUp);
-};
+});
 
-btnSignUp.addEventListener("click", handlerSignUp);
-btnLogIn.addEventListener("click", handlerLogIN);
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("load", function () {
   const tableBody = document.getElementById("table-body");
 
   if (!tableBody) {

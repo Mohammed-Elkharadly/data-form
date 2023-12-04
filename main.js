@@ -25,9 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const outBtn = document.getElementById("out-btn");
 
 outBtn.addEventListener("click", function () {
-  window.sessionStorage.removeItem("email");
-  window.sessionStorage.removeItem("password");
-  window.location.href = "./index.html";
+  window.location.replace("./index.html");
 });
 
 

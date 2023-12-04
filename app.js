@@ -38,7 +38,7 @@ btnSignUp.addEventListener("click", function (e) {
     errorMessage2.classList.toggle("error");
     inputName.style.border = "none";
     inputName.style.color = "green";
-    window.sessionStorage.setItem("email", inputEmail.value);
+    window.localStorage.setItem("email", inputEmail.value);
   }
 
   if (!passwordRe.test(inputPassword.value.trim())) {
@@ -47,7 +47,7 @@ btnSignUp.addEventListener("click", function (e) {
     errorMessage3.classList.toggle("error");
     inputName.style.border = "none";
     inputName.style.color = "green";
-    window.sessionStorage.setItem("password", inputPassword.value);
+    window.localStorage.setItem("password", inputPassword.value);
   }
 
   if (
@@ -87,8 +87,8 @@ btnLogIn.addEventListener("click", function (e) {
     passwordThree.style.color = "green";
   }
 
-  let storageEmail = window.sessionStorage.getItem("email");
-  let storagePass = window.sessionStorage.getItem("password");
+  let storageEmail = window.localStorage.getItem("email");
+  let storagePass = window.localStorage.getItem("password");
 
   if (
     storageEmail === inputEmailTwo.value &&

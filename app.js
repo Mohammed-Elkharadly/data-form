@@ -18,14 +18,14 @@ let emailRe =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let passwordRe = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
 
-btnSignUp.addEventListener("click", function (e) {
+btnSignUp.addEventListener("click", function handlerSignUp(e) {
+  e.preventDefault();
   errorMessage1.innerHTML = "";
   errorMessage2.innerHTML = "";
   errorMessage3.innerHTML = "";
   errorMessage4.innerHTML = "";
   if (inputName.value === "" || inputName.value === null) {
     errorMessage1.innerHTML = "الاسم لا يجب ان يكون فارغا";
-    e.preventDefault();
   } else {
     errorMessage1.classList.toggle("error");
     inputName.style.border = "none";
@@ -34,7 +34,6 @@ btnSignUp.addEventListener("click", function (e) {
 
   if (!emailRe.test(inputEmail.value)) {
     errorMessage2.innerHTML = "هذا الايميل غير صالح";
-    e.preventDefault();
   } else {
     errorMessage2.classList.toggle("error");
     inputName.style.border = "none";
@@ -44,12 +43,11 @@ btnSignUp.addEventListener("click", function (e) {
 
   if (!passwordRe.test(inputPassword.value.trim())) {
     errorMessage3.innerHTML = "يجب ان تكون كلمة المرور 8 حروف و رموز او اكثر";
-    e.preventDefault();
   } else {
     errorMessage3.classList.toggle("error");
     inputName.style.border = "none";
     inputName.style.color = "green";
-    window.localStorage.setItem("password", inputPassword.value.trim());
+    window.localStorage.setItem("password", inputPassword.value);
   }
 
   if (
@@ -57,22 +55,24 @@ btnSignUp.addEventListener("click", function (e) {
     confirmPassword.value === ""
   ) {
     errorMessage4.innerHTML = "كلمة المرور غير مطابقة";
-    e.preventDefault();
   } else {
     errorMessage4.classList.toggle("error");
     inputName.style.border = "none";
     inputName.style.color = "green";
   }
+  inputName.value = "";
+  inputEmail.value = "";
+  inputPassword.value = "";
+  confirmPassword.value = "";
 });
 
-btnLogIn.addEventListener("click", function (e) {
+btnLogIn.addEventListener("click", function handlerLogIN(e) {
   e.preventDefault();
   errorMessage5.innerHTML = "";
   errorMessage6.innerHTML = "";
   errorMessage7.innerHTML = "";
   if (!emailRe.test(inputEmailTwo.value)) {
     errorMessage5.innerHTML = "هذا الايميل غير صحيح";
-    e.preventDefault();
   } else {
     errorMessage5.classList.toggle("error");
     inputEmailTwo.style.border = "none";
@@ -81,7 +81,6 @@ btnLogIn.addEventListener("click", function (e) {
 
   if (!passwordRe.test(passwordThree.value)) {
     errorMessage6.innerHTML = "كلمة المرور خاطئة";
-    e.preventDefault();
   } else {
     errorMessage6.classList.toggle("error");
     passwordThree.style.border = "none";
@@ -101,38 +100,6 @@ btnLogIn.addEventListener("click", function (e) {
   }
   inputEmailTwo.value = "";
   passwordThree.value = "";
-  btnLogIn.removeEventListener("click", handlerLogIN);
-  btnSignUp.removeEventListener("click", handlerSignUp);
 });
 
-document.addEventListener("load", function () {
-  const tableBody = document.getElementById("table-body");
 
-  if (!tableBody) {
-    console.error("Could not find table body element");
-  } else {
-    console.log("Table body found:", tableBody);
-  }
-
-  // جلب بيانات JSON
-  fetch("./table.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // حلق عبر البيانات وإلحاق الصفوف بالجدول
-      data.forEach((item) => {
-        let row = `
-          <tr>
-            <td>${item.age}</td>
-            <td>${item.name}</td>
-            <td>${item.id}</td>
-          </tr>`;
-        tableBody.innerHTML += row;
-      });
-    })
-    .catch((error) => console.error("Error fetching data:", error));
-});

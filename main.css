@@ -13,6 +13,7 @@ html {
   font-size: 10px;
 }
 
+
 a {
   text-decoration: none;
   color: hsl(0, 0%, 100%);
@@ -20,24 +21,24 @@ a {
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(
+  background: linear-gradient(
     to right,
-    hsl(219, 96%, 51%),
-    hsl(187, 100%, 50%)
-  );
+    hsla(219, 96%, 51%, 0.322),
+    hsla(187, 100%, 50%, 0.233)
+  ), url(./images/hero-bcg.jpeg) center/cover no-repeat;
 }
 
-main .nav {
+.nav {
   background-color: hsl(0, 0%, 100%);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1.5rem;
-  box-shadow: inset 1px 1px 20px 0px hsl(210, 48%, 32%);
+  box-shadow:  0px 20px 10px hsla(210, 48%, 32%, 0.493);
 }
 
 
-main .container {
+.container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -46,45 +47,49 @@ main .container {
 }
 
 @media (max-width: 46em) {
-  main .container {
+  .container {
     flex-direction: column;
     align-items: center;
   }
+  .nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
-main .container #log-in {
+#log-in {
   align-items: flex-start;
 }
 
-main .container form {
-  background-color: white;
+form {
+  background-color: transparent;
   border-radius: .5rem;
   padding: 1.5rem;
   position: relative;
 }
 
 
-main .container .form-container {
+.form-container {
   display: flex;
   flex-direction: column;
   text-align: right;
   margin-bottom: 1.5rem;
 }
 
-main .container form h2 {
-  color: hsl(210, 98%, 16%);
+form h2 {
+  color: hsl(0, 0%, 100%);
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: bold;
 }
 
-main .container .form-container label {
-  color: hsl(210, 98%, 16%);
+.form-container label {
+  color: hsl(0, 0%, 100%);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-main .container .form-container input {
+.form-container input {
   padding: 0.5rem 0.2rem;
   font-size: 1.5rem;
   color: hsl(210, 98%, 16%);
@@ -95,23 +100,22 @@ main .container .form-container input {
   text-align: right;
 }
 
-main .container form .btn {
+.btn {
   background-color: hsl(210, 48%, 32%);
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(210, 98%, 16%);
   border-radius: 0.5rem;
   width: 100%;
-  padding: 0.5rem 0.2rem;
-  margin-top: 1rem;
+  padding: 0.5rem 1rem;
   font-size: 2.5rem;
   cursor: pointer;
 }
 
-main .container form .btn:hover {
+.btn:hover {
   background-color: hsl(210, 98%, 16%);
 }
 
-main .container .form-container .error {
+.error {
   margin-top: .5rem;
   font-size: 1.2rem;
   color: hsl(0, 100%, 50%);
@@ -127,13 +131,13 @@ main .container .form-container .error {
     right: 1.4rem;
 }
 
-main .container table {
+table {
   overflow-x: scroll;
 }
-main .container table thead {
+table thead {
   background-color: white;
 }
-main .container table thead th {
+table thead th {
   padding: 15px;
   text-transform: capitalize;
   border-spacing: 0;
@@ -142,11 +146,11 @@ main .container table thead th {
   font-weight: bold;
 }
 
-main .container table tbody {
+table tbody {
   background-color: white;
   text-align: right;
 }
-main .container table tbody td {
+table tbody td {
   padding: 1.5rem;
   font-size: 1.5rem
 }

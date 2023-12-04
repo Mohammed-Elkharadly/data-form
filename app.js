@@ -18,7 +18,7 @@ let emailRe =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let passwordRe = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
 
-btnSignUp.addEventListener("click", function handlerSignUp(e) {
+btnSignUp.addEventListener("click", function (e) {
   e.preventDefault();
   errorMessage1.innerHTML = "";
   errorMessage2.innerHTML = "";
@@ -66,7 +66,7 @@ btnSignUp.addEventListener("click", function handlerSignUp(e) {
   confirmPassword.value = "";
 });
 
-btnLogIn.addEventListener("click", function handlerLogIN(e) {
+btnLogIn.addEventListener("click", function (e) {
   e.preventDefault();
   errorMessage5.innerHTML = "";
   errorMessage6.innerHTML = "";
